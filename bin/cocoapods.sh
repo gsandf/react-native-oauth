@@ -9,7 +9,7 @@ if [ ! -d $ios_dir ]
 fi
 
 podfile="$ios_dir/Podfile"
-template=`pwd`/node_modules/react-native-oauth/ios/Podfile.template
+template=`pwd`/node_modules/@gsandf/react-native-oauth/ios/Podfile.template
 
 echo "Checking Podfile in iOS project ($podfile)"
 
@@ -21,7 +21,7 @@ if [ -f $podfile ]
 
   if [ "$generate_env_file" != "y" ]
     then
-  
+
     echo "Add the following pods":
     echo ""
     echo ""
