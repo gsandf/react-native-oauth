@@ -72,7 +72,7 @@
 		B76E094C1E768CE100A9AF9A /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		B76E094D1E768CE100A9AF9A /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		D91353961DA7849100AABC96 /* libOAuthManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOAuthManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D935004C1D513CF700C7BA47 /* OAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthManager.m; path = OAuthManager/OAuthManager.m; sourceTree = "<group>"; };
+		D935004C1D513CF700C7BA47 /* OAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthManager.m; path = "../../../../../../../bknight/develop/parallon-ptac/node_modules/@gsandf/react-native-oauth/ios/OAuthManager/OAuthManager.m"; sourceTree = "<group>"; };
 		D991AB771D1B237400DE9E58 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		D9F2EAD11DA9A9650000BD52 /* OAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthClient.h; path = OAuthManager/OAuthClient.h; sourceTree = SOURCE_ROOT; };
 		D9F2EAD21DA9A9650000BD52 /* OAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthClient.m; path = OAuthManager/OAuthClient.m; sourceTree = SOURCE_ROOT; };
@@ -120,6 +120,7 @@
 				D9F6DCB41DA8EFBC00D10561 /* Clients */,
 				D9F6DCB51DA8EFC300D10561 /* Protocols */,
 				D91353961DA7849100AABC96 /* libOAuthManager.a */,
+				DA04624A1FD1EE0500DC47A3 /* Recovered References */,
 			);
 			path = "/Users/auser/Development/react-native/mine/OAuthManager/ios/OAuthManager.xcodeproj";
 			sourceTree = "<absolute>";
@@ -150,6 +151,14 @@
 				D9F2EADD1DA9A9840000BD52 /* OAuthClientProtocol.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		DA04624A1FD1EE0500DC47A3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D935004C1D513CF700C7BA47 /* OAuthManager.m */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,10 +394,7 @@
 				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-					"$(SRCROOT)/../../react-native/Libraries/LinkingIOS",
-					"$(SRCROOT)/../../../ios/Pods/DCTAuth/DCTAuth",
+					"$(SRCROOT)/../../../../ios/Pods/DCTAuth/DCTAuth",
 				);
 				LD_DYLIB_INSTALL_NAME = "";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -412,10 +418,7 @@
 				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-					"$(SRCROOT)/../../react-native/Libraries/LinkingIOS",
-					"$(SRCROOT)/../../../ios/Pods/DCTAuth/DCTAuth",
+					"$(SRCROOT)/../../../../ios/Pods/DCTAuth/DCTAuth",
 				);
 				LD_DYLIB_INSTALL_NAME = "";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
