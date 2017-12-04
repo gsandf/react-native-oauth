@@ -10,7 +10,6 @@
 		B76E094E1E768CE100A9AF9A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B76E094B1E768CE100A9AF9A /* README.md */; };
 		B76E094F1E768CE100A9AF9A /* XMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B76E094C1E768CE100A9AF9A /* XMLReader.h */; };
 		B76E09501E768CE100A9AF9A /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B76E094D1E768CE100A9AF9A /* XMLReader.m */; };
-		C90A7DD924A41ED5AC121830 /* libPods-OAuthManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEBD4A49CB3A9B272DD53CC /* libPods-OAuthManager.a */; };
 		D9F2EAD31DA9A9650000BD52 /* OAuthClient.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F2EAD11DA9A9650000BD52 /* OAuthClient.h */; };
 		D9F2EAD41DA9A9650000BD52 /* OAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F2EAD21DA9A9650000BD52 /* OAuthClient.m */; };
 		D9F2EAD91DA9A9730000BD52 /* OAuth1Client.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F2EAD51DA9A9730000BD52 /* OAuth1Client.h */; };
@@ -68,9 +67,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0BEBD4A49CB3A9B272DD53CC /* libPods-OAuthManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OAuthManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F2D6E8EDF176E9801B9917B /* Pods-OAuthManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuthManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAuthManager/Pods-OAuthManager.debug.xcconfig"; sourceTree = "<group>"; };
-		6290E65E91DA7ACD87E4DFB1 /* Pods-OAuthManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuthManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAuthManager/Pods-OAuthManager.release.xcconfig"; sourceTree = "<group>"; };
 		B76E094B1E768CE100A9AF9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B76E094C1E768CE100A9AF9A /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		B76E094D1E768CE100A9AF9A /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
@@ -93,22 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90A7DD924A41ED5AC121830 /* libPods-OAuthManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F5C379138687C57BFB115F7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2F2D6E8EDF176E9801B9917B /* Pods-OAuthManager.debug.xcconfig */,
-				6290E65E91DA7ACD87E4DFB1 /* Pods-OAuthManager.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B76E094A1E768CE100A9AF9A /* XMLReader */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,10 +118,8 @@
 				D9F6DCB41DA8EFBC00D10561 /* Clients */,
 				D9F6DCB51DA8EFC300D10561 /* Protocols */,
 				D91353961DA7849100AABC96 /* libOAuthManager.a */,
-				0F5C379138687C57BFB115F7 /* Pods */,
-				FB21C9198AC15A6234708243 /* Frameworks */,
 			);
-			path = "OAuthManager/ios/OAuthManager.xcodeproj";
+			path = OAuthManager/ios/OAuthManager.xcodeproj;
 			sourceTree = "<absolute>";
 		};
 		D991AB781D1B237400DE9E58 /* Products */ = {
@@ -166,14 +150,6 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
-		FB21C9198AC15A6234708243 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0BEBD4A49CB3A9B272DD53CC /* libPods-OAuthManager.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -198,12 +174,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "OAuthManager" */;
 			buildPhases = (
-				0DC2A1D91C2875A67A17DB79 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* Copy Files */,
 				D92A80BB1DA9030200EFDC2C /* Headers */,
-				1163527FD9934043D49422BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,42 +243,6 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0DC2A1D91C2875A67A17DB79 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OAuthManager-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1163527FD9934043D49422BA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OAuthManager/Pods-OAuthManager-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -437,7 +375,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F2D6E8EDF176E9801B9917B /* Pods-OAuthManager.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DYLIB_INSTALL_NAME_BASE = "";
@@ -462,7 +399,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6290E65E91DA7ACD87E4DFB1 /* Pods-OAuthManager.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DYLIB_INSTALL_NAME_BASE = "";
