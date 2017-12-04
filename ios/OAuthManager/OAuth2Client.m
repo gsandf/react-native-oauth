@@ -54,7 +54,8 @@ static NSString *TAG = @"OAuth2Client";
         }
         
         NSLog(@"Success!: %@", account);
-        onSuccess(account);
+        
+        onSuccess(account, responses[1]);
     }];
 }
 
@@ -80,7 +81,7 @@ static NSString *TAG = @"OAuth2Client";
             return;
         }
         
-        onSuccess(account);
+        onSuccess(account, response);
     }];
 }
 

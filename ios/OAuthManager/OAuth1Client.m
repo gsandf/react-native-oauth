@@ -48,7 +48,7 @@ static NSString *TAG = @"OAuth1Client";
             return;
         }
         
-        onSuccess(account);
+        onSuccess(account, responses[1]);
     }];
     return;
 }

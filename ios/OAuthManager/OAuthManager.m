@@ -360,16 +360,25 @@ RCT_EXPORT_METHOD(authorize:(NSString *)providerName
     [client authorizeWithUrl:providerName
                          url:callbackUrl
                          cfg:cfg
-                   onSuccess:^(DCTAuthAccount *account) {
-                      NSLog(@"on success called with account: %@", account);
+                   onSuccess:^(DCTAuthAccount *account, DCTAuthResponse *response) {
+                       NSLog(@"on success called with account: %@", account);
+                       NSLog(@"on success called with response: %@", response);
                        NSDictionary *accountResponse = [manager getAccountResponse:account cfg:cfg];
+                       
+                       NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response.data options:kNilOptions error:nil];
+                       NSString *idToken = [json valueForKey:@"id_token"];
+                       NSDictionary *authResponse = [OAuthManager decodeWithToken:idToken];
+                       NSLog(@"auth response data: %@", authResponse);
+                       
                        _pendingAuthentication = NO;
                        [manager removePending:client];
                        [[manager accountStore] saveAccount:account]; // <~
                        
                        callback(@[[NSNull null], @{
-                                      @"status": @"ok",
-                                      @"response": accountResponse
+                                      @"authResponse": authResponse,
+                                      @"idToken": idToken,
+                                      @"response": accountResponse,
+                                      @"status": @"ok"
                                       }]);
                    } onError:^(NSError *error) {
                        NSLog(@"Error in authorizeWithUrl: %@", error);
@@ -524,6 +533,42 @@ RCT_EXPORT_METHOD(makeRequest:(NSString *)providerName
             return [allAccounts lastObject];
         }
     }
+}
+
++(NSData *) base64DecodeWithString:(NSString *) string {
+    string = [[string stringByReplacingOccurrencesOfString:@"-" withString:@"+"]
+              stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
+    
+    int size = [string length] % 4;
+    NSMutableString *segment = [[NSMutableString alloc] initWithString:string];
+    for (int i = 0; i < size; i++) {
+        [segment appendString:@"="];
+    }
+    
+    return [[NSData alloc] initWithBase64EncodedString:segment options:0];
+}
+
++(NSDictionary *) decodeWithToken:(NSString *)token {
+    NSArray *segments = [token componentsSeparatedByString:@"."];
+    if([segments count] != 3) {
+        return nil;
+    }
+    
+    // All segments should be base64
+    NSString *headerSeg = segments[0];
+    NSString *payloadSeg = segments[1];
+    
+    // Decode and parse header and payload JSON
+    NSDictionary *header = [NSJSONSerialization JSONObjectWithData:[self base64DecodeWithString:headerSeg] options:NSJSONReadingMutableLeaves error:nil];
+    if (header == nil) {
+        return nil;
+    }
+    NSDictionary *payload = [NSJSONSerialization JSONObjectWithData:[self base64DecodeWithString:payloadSeg] options:NSJSONReadingMutableLeaves error:nil];
+    if (payload == nil) {
+        return nil;
+    }
+    
+    return payload;
 }
 
 - (NSDictionary *) credentialForAccount:(NSString *)providerName

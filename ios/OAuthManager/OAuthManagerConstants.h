@@ -20,7 +20,7 @@ enum _runtime_error
 
 #define QUICK_ERROR(error_code, error_description) [NSError errorWithDomain:NSStringFromClass([self class]) code:error_code userInfo:[NSDictionary dictionaryWithObject:error_description forKey:NSLocalizedDescriptionKey]];
 
-typedef void(^AuthManagerCompletionBlock)(DCTAuthAccount *account);
+typedef void(^AuthManagerCompletionBlock)(DCTAuthAccount *account, DCTAuthResponse *response);
 typedef void(^AuthManagerErrorBlock)(NSError *error);
 
 #endif /* OAuthManagerConstants_h */
