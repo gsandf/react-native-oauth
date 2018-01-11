@@ -1,7 +1,10 @@
 {
   "name": "@gsandf/react-native-oauth",
   "version": "2.2.0",
-  "author": "Ari Lerner <ari@fullstack.io> (https://fullstackreact.com)",
+  "authors": [
+    "Ari Lerner <ari@fullstack.io> (https://fullstackreact.com)",
+    "Blake Knight <bknight@gsandf.com> (http://blakek.me)"
+  ],
   "description": "An oauth manager for dealing with the complexities of oauth",
   "main": "./react-native-oauth.js",
   "scripts": {
@@ -14,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fullstackreact/react-native-oauth.git"
+    "url": "https://github.com/gsandf/react-native-oauth.git"
   },
   "license": "ISC",
   "keywords": [
